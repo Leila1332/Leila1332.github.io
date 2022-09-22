@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" typ="txt/css" href="test.css">
+<script type="text/javascript" src="sidan.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>Forms</title>
+</head>
+
+<body id="mainBody">
+    <div class="container" id="submitForm">
+
+    </div>
+    <h2 align="vänster">Register form</h2>
+    <form action="page2.htm" method="get" id="form1"></form>
+
+
+    <label for="firstName" class="in" < align="right">First Name:</label>
+    <input type="text" name="fn" id="firstName"><br>
+
+
+    <label for="lastName" < align="right">Last Name:</label>
+    <input type="text" name="In" id="lastName"><br>
+
+
+    <label for="email">Email:</label>
+    <input type="text" name="em" id="emailAdress"><br>
+
+
+    <label for="Password">Password:</label>
+    <input type="text" name="pass" id="password"><br>
+    <div id="passwordDiv">
+        <p id="tack"></p>
+
+    </div>
+
+    <p>Typ av intresse:</p>
+
+
+    <input type="checkbox" name="comp" value="on">
+    <label for="int1">Computer</label>
+
+    <input type="checkbox" name="music" value="on">
+    <label for="int2">Music</label>
+
+    <input type="checkbox" name="int" value="on">
+    <label for="int3"> Internet</label>
+
+    <input type="checkbox" name="sport" value="on">
+    <label for="int4">Sport</label>
+
+    <p>Typ av sport:</p>
+    <input type="checkbox" name="fot" value="on">
+    <label for="int1">fotboll</label>
+
+    <input type="checkbox" name="Simma" value="on">
+    <label for="int2">Simma</label>
+
+    <input type="checkbox" name="cykla" value="on">
+    <label for="int3">cykla</label>
+
+    <input type="hockey" name="sport" value="on">
+    <label for="int4">Hockey</label>
+
+
+
+
+    <p>Favorite Sport:</p>
+    <div class="colours">
+        <input type="radio" name="fcolor" value="f">
+        <label for="col1">Red</label>
+
+        <input type="radio" name="fcolor" value="g">
+        <label for="col2">Green</label>
+
+        <input type="radio" name="fcolor" value="p">
+        <label for="col3">Pink</label><br>
+
+        <input type="radio" name="fcolor" value="b">
+        <label for="col4">Blue</label><br>
+    </div>
+
+    <div id="commentDiv">
+        <label for="comments">write in comment:</label><br>
+        <textarea name="comment" cols="30" rows="5" placeholder="write comment"></textarea>
+    </div>
+
+    <p>Country:</p>
+
+    <select name="country" id="countrySelector">
+            <option value="ir">Iran</option>
+            <option value="jp">Japan</option>
+            <option value="fr">France</option>
+            <option value="de">Germany</option>
+            <option value="cn">China</option>
+        </select>
+
+
+    <button type="button" onclick="Submit()" id="submit">Send</button>
+    <!-- <input type="submit" name="submit" value="Send"> -->
+    <input type="reset" name="reset" value="Reset"><br>
+
+
+    <form>
+        <table>
+
+
+
+
+        </table>
+    </form>
+</body>
+
+</html>
