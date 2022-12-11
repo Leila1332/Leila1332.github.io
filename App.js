@@ -1,196 +1,183 @@
-import { useState } from 'react';
-
+import { StatusBar } from "expo-status-bar";
 import {
   Button,
+  Alert,
   Image,
+  SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
-} from 'react-native';
+} from "react-native";
 
 export default function App() {
-  const [textColorLamp, setTextColorLamp] = useState("red");
-  const [textColorHeater, setTextColorHeater] = useState("red");
-  const [textColorTV, setTextColorTV] = useState("red");
+  let actionLeila = () => {
+    alert(" Hejsan Leila!");
+  };
+  let actionOnLoadMore = () => {
+    Alert.alert("Alert Title", "Alert message", [
+      {
+        text: "OK",
+        onPress: handleOkPress,
+      },
+    ]);
+  };
 
   return (
-    <View style={styles.container}>
-      <View style={{ flexDirection: "row" }}>
-        <Image
-          style={{
-            flexDirection: "row",
-            backgroundColor: "white",
-            margin: 5,
-            width: 50,
-            height: 50,
-          }}
-          source={require("./assets/house.png")}
-        />
-
-        <Text style={{ color: "blue", fontWeight: "bold" }}>SmartHome</Text>
-      </View>
-      <Text style={{ fontWeight: "bold", color: "black" }}>
-        {}
-        {""}Rooms
-      </Text>
-
-      <View style={{ flexDirection: "row" }}>
-        <Image
-          style={{
-            flexDirection: "column",
-            width: 56,
-            height: 56,
-            backgroundColor: "lightblue",
-            margin: 5,
-          }}
-          source={require("./assets/living-room.png")}
-        />
-
-        <Image
-          style={{
-            flexDirection: "column",
-            width: 56,
-            height: 56,
-            backgroundColor: "lightblue",
-            margin: 5,
-          }}
-          source={require("./assets/bed.png")}
-        />
-
-        <Image
-          style={{
-            flexDirection: "column",
-            width: 56,
-            height: 56,
-            backgroundColor: "lightblue",
-            margin: 5,
-          }}
-          source={require("./assets/kitchen.png")}
-        />
-      </View>
-      <Text style={{ fontWeight: "bold" }}>Devices</Text>
-
-      <View style={{ justifyContent: "flex-end" }}>
-        <Text
-          style={{
-            backgroundColor: "#ffeb7a",
-            width: 190,
-            height: 80,
-            margin: 5,
-          }}
-        >
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
           <View
             style={{
-              height: 10,
-              width: 10,
-              backgroundColor: textColorLamp,
-              margin: 5,
+              flexDirection: "row",
+              height: 100,
+              width: 400,
+              justifyContent: "space-between",
+              backgroundColor: "purple",
             }}
-          ></View>
-          Living Room Lamp
-          <View style={{ flexDirection: "column" }}>
-            <Button
-              title="On"
-              onPress={() => {
-                setTextColorLamp("green");
+          >
+            <Text style={{ color: "white", fontWeight: "bold" }}>
+              Hello Guest!!{" "}
+            </Text>
+            <Image
+              style={{
+                height: 100,
+                width: 100,
               }}
-            ></Button>
-
-            <Button
-              title="Off"
-              onPress={() => {
-                setTextColorLamp("red");
+              source={require("./assets/profile.png")}
+            ></Image>
+          </View>
+          <Button title="submit" onPress={actionLeila}></Button>
+          <Text style={{ fontWeight: "bold", fontSize: 20 }}>
+            Today's Highlights
+          </Text>
+          <View style={{ height: 600, width: 350, left: 18, top: 50 }}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 15,
+                backgroundColor: "oldlace",
+                padding: 20,
               }}
             >
-              >
-            </Button>
+              <text style={{ fontWeight: "bold", fontSize: 20 }}>
+                First Article
+              </text>
+            </Text>
+
+            <Text style={{ backgroundColor: "oldlace", fontWeight: "bold" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consectetur libero purus. Proin maximus justo sed lacus ultrices
+              interdum. Sed accumsan velit nisi, a interdum velit maximus nec.
+              Sed ut egestas odio, vitae commodo odio. Nam eget dignissim arcu.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consectetur libero purus. Proin maximus justo sed lacus ultrices
+              interdum. Sed accumsan velit nisi, a interdum velit maximus nec.
+              Sed ut egestas odio, vitae commodo odio. Nam eget dignissim arcu.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+            </Text>
           </View>
-        </Text>
-      </View>
-
-      <View style={{ justifyContent: "flex-end", alignContent: "flex-end" }}>
-        <Text
-          style={{
-            backgroundColor: "#ffeb7a",
-            width: 190,
-            height: 80,
-            margin: 5,
-            alignItems: "flex-start",
-
-            // justifyContent: "flex-end",
-          }}
-        >
-          <View
-            style={{ height: 10, width: 10, backgroundColor: textColorHeater }}
-          ></View>
-          Heater{"                     "}
-          <View style={{ flexDirection: "column" }}>
-            <Button
-              title="On"
-              onPress={() => {
-                setTextColorHeater("green");
+          <View style={{ height: 600, width: 350, left: 18, top: 50 }}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 15,
+                backgroundColor: "oldlace",
+                padding: 20,
               }}
-            ></Button>
-            <Button
-              title="Off"
-              onPress={() => {
-                setTextColorHeater("red");
-              }}
-            ></Button>
+            >
+              <text style={{ fontWeight: "bold", fontSize: 20 }}>
+                Another Article
+              </text>
+            </Text>
+
+            <Text style={{ backgroundColor: "oldlace", fontWeight: "bold" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consectetur libero purus. Proin maximus justo sed lacus ultrices
+              interdum. Sed accumsan velit nisi, a interdum velit maximus nec.
+              Sed ut egestas odio, vitae commodo odio. Nam eget dignissim arcu.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consectetur libero purus. Proin maximus justo sed lacus ultrices
+              interdum. Sed accumsan velit nisi, a interdum velit maximus nec.
+              Sed ut egestas odio, vitae commodo odio. Nam eget dignissim arcu.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+            </Text>
           </View>
-        </Text>
-      </View>
+          <View style={{ height: 600, width: 350, left: 18, top: 50 }}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 15,
+                backgroundColor: "oldlace",
+                padding: 20,
+              }}
+            >
+              <text style={{ fontWeight: "bold", fontSize: 20 }}>
+                Import One
+              </text>
+            </Text>
 
-      <View>
-        <Text
-          style={{
-            backgroundColor: "#ffeb7a",
-            width: 190,
-            height: 80,
-            margin: 5,
-          }}
-        >
-          <View
-            style={{
-              height: 10,
-              width: 10,
-              backgroundColor: textColorTV,
-              justifyContent: "flex-start",
-            }}
-          ></View>
-          TV{"                           "}
-          <View style={{ flexDirection: "column" }}>
-            <Button
-              title="On"
-              onPress={() => {
-                setTextColorTV("green");
-              }}
-            ></Button>
-            <Button
-              title="Off"
-              onPress={() => {
-                setTextColorTV("red");
-              }}
-            ></Button>
+            <Text style={{ backgroundColor: "oldlace", fontWeight: "bold" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consectetur libero purus. Proin maximus justo sed lacus ultrices
+              interdum. Sed accumsan velit nisi, a interdum velit maximus nec.
+              Sed ut egestas odio, vitae commodo odio. Nam eget dignissim arcu.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consectetur libero purus. Proin maximus justo sed lacus ultrices
+              interdum. Sed accumsan velit nisi, a interdum velit maximus nec.
+              Sed ut egestas odio, vitae commodo odio. Nam eget dignissim arcu.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+              Praesent scelerisque augue eu varius iaculis. Donec tempor
+              tincidunt vulputate. Phasellus volutpat sapien at mi dapibus, sit
+              amet facilisis diam ultricies. Aenean consequat arcu facilisis
+              arcu dapibus consequat. Quisque scelerisque varius sollicitudin.
+            </Text>
           </View>
-        </Text>
-      </View>
-      <View>
-        <Text style={{ fontWeight: "bold" }}>Total Devices On: 1</Text>
-      </View>
 
-      {/* <StatusBar style="auto" /> */}
-    </View>
+          <Button title="Load more" onPress={actionOnLoadMore}></Button>
+        </View>
+      </ScrollView>
+
+      <StatusBar style="auto" />
+      {/* </View> */}
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // flexDirection: "row",
-    backgroundColor: "withe",
-    margin: 40,
-    alignItems: "flex-start",
+    backgroundColor: "white",
+    alignItems: "flex-center",
     // justifyContent: "center",
   },
 });
